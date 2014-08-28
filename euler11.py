@@ -2,10 +2,49 @@ grid = '08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08 49 49 99 40 
 rows = []
 for i in range(1,21):
 	rows.append(grid[(60*(i-1)):(60*(i-1))+59])
-print rows
 
+max = 0
 #check rows for matches
+for row in rows:
+	for x in range(0,17):
+		num1 = int(row[(x*3):(x*3)+3])
+		num2 = int(row[(x*3)+3:(x*3)+5])
+		num3 = int(row[(x*3)+6:(x*3)+8])
+		num4 = int(row[(x*3)+9:(x*3)+11])
+		#nums = [num1, num2, num3, num4]
+		if (num1 * num2 * num3 * num4)>max:
+			max = num1 * num2 * num3 * num4
+	
 
 #check columns for matches
+for x in range(0,20):
+	for y in range(0,17):
+		num1 = int(rows[y][(x*3):(x*3)+3])
+		num2 = int(rows[y+1][(x*3):(x*3)+3])
+		num3 = int(rows[y+2][(x*3):(x*3)+3])
+		num4 = int(rows[y+3][(x*3):(x*3)+3])
+		#nums = [num1, num2, num3, num4]
+		#print nums
+		if (num1 * num2 * num3 * num4)>max:
+			max = num1 * num2 * num3 * num4
 
 #check diagonals for matches
+for x in range(0,17):
+	for y in range(0,17):
+		num1 = int(rows[y][(x*3):(x*3)+3])
+		num2 = int(rows[y+1][(x*3)+3:(x*3)+5])
+		num3 = int(rows[y+2][(x*3)+6:(x*3)+8])
+		num4 = int(rows[y+3][(x*3)+9:(x*3)+11])
+		num5 = int(rows[y+3][x*3:(x*3)+3])
+		num6 = int(rows[y+2][(x*3)+3:(x*3)+5])
+		num7 = int(rows[y+1][(x*3)+6:(x*3)+8])
+		num8 = int(rows[y][(x*3)+9:(x*3)+11])
+		print [num1, num2, num3, num4]
+		print [num5, num6, num7, num8]
+
+		if (num1 * num2 * num3 * num4)>max:
+			max = num1 * num2 * num3 * num4
+		if (num5 * num6 * num7 * num8)>max:
+			max = num5 * num6 * num7 * num8
+
+print max
