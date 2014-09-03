@@ -1,4 +1,4 @@
-n = 6
+n = 20
 
 def find_all_paths(graph,start,end,path=[]):
 	path = path + [start]
@@ -18,15 +18,15 @@ def find_all_paths(graph,start,end,path=[]):
 graph = {}
 for x in range(0,n+1):
 	for y in range(0,n+1):
-		if (x == n and y == n):
-			graph[str(x).zfill(2)+str(y).zfill(2)] = ['none']
+		if (x !=n and y!=n):
+			graph[str(x).zfill(2)+str(y).zfill(2)] = [str(x+1).zfill(2)+str(y).zfill(2), str(x).zfill(2)+str(y+1).zfill(2)]
 		elif (x==n):
 			graph[str(x).zfill(2)+str(y).zfill(2)] = [str(x).zfill(2)+str(y+1).zfill(2)]
 		elif (y==n):
 			graph[str(x).zfill(2)+str(y).zfill(2)] = [str(x+1).zfill(2)+str(y).zfill(2)]
-
-		else:
-			graph[str(x).zfill(2)+str(y).zfill(2)] = [str(x+1).zfill(2)+str(y).zfill(2), str(x).zfill(2)+str(y+1).zfill(2)]
+		elif (x==n and y==n):
+			continue
+		
 
 result = find_all_paths(graph, '0000', str(n).zfill(2)+str(n).zfill(2))	
 print len(result)
