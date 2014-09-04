@@ -1,0 +1,10 @@
+days = ['mon', 'tues', 'wed', 'thurs', 'fri', 'sat', 'sun']
+month30 = list(range(1,30))
+month31 = list(range(1,31))
+monthfeb = list(range(1,28))
+monthlfeb = list(range(1,29))
+months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
+year = 1900
+month = months[0]
+date = 1
+days = day[0]
