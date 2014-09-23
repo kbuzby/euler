@@ -1,10 +1,11 @@
-days = ['mon', 'tues', 'wed', 'thurs', 'fri', 'sat', 'sun']
-month30 = list(range(1,30))
-month31 = list(range(1,31))
-monthfeb = list(range(1,28))
-monthlfeb = list(range(1,29))
-months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
-year = 1900
-month = months[0]
-date = 1
-days = day[0]
+import datetime
+start = datetime.datetime(1901, 1, 1)
+end = datetime.datetime(2000, 12,31)
+increase = datetime.timedelta(1)
+cur = start
+count = 0
+for x in range(0,(end-start).days):
+	if cur.weekday()==6 and cur.day==1:
+		count += 1
+	cur += increase
+print count
