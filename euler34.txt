@@ -1,0 +1,1 @@
+researched factorian and got the answer as there are only 4 numbers that are factorians.
