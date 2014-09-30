@@ -18,6 +18,8 @@ while ans<11:
 			for x in range(1,len(pstr)):
 				if int(pstr[x:]) in primes and int(pstr[:-x]) in primes:
 					test += 1
+				else:
+					break
 			if test == len(pstr):
 				ans += 1
 				total += prime
