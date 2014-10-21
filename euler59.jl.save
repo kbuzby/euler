@@ -1,0 +1,21 @@
+f = open("p059_cipher.txt")
+cipher = readdlm(f,',',Int64)
+ans = String[]
+valid = [32,65:9]
+for a = 97:122, b = 97:122, c = 97:122
+	str = ""
+	for n = 0:((length(cipher)-3)
+		if in(cipher[n+1]$a,valid) && in(cipher[n+2]$b,valid) && in(cipher[n+3]$c,valid)	
+			c1 = cipher[n+1]$a
+			c2 = cipher[n+2]$b
+			c3 = cipher[n+3]$c
+			str = string(str,char(c1),char(c2),char(c3))
+		else
+			break
+		end
+	end
+	if !isempty(str) && length(str) == length(cipher)
+		push!(ans,str)
+	end
+end
+println(ans)
