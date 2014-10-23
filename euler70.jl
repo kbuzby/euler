@@ -25,7 +25,9 @@ function isperm(n,phin)
 
 minn = 10
 ans = 0
-for n = 2:9999999
+rng = IntSet([2:9999999])
+setdiff!(rng,primes(9999999))
+for n = rng
 	phin = phi(n)
 	t = n/phin
 	if t < minn
