@@ -23,28 +23,5 @@ for line in rl
 	x += 1
 end	
 
-
 println(minpath(arr,80,80))
 
-#minpath = int(arr[80][80])
-#i = 80
-#j = 80
-#while i !=1 || j != 1	
-#	if i != 1 && j != 1
-#		if int(arr[i-1][j])<int(arr[i][j-1])
-#			println(int(arr[i-1][j]),'<',int(arr[i][j-1]))	
-#			i -= 1
-#		else
-#			println(int(arr[i][j-1]),'<',int(arr[i-1][j]))
-#			j -= 1
-#		end
-#	elseif i == 1
-#		j -= 1
-#	elseif j == 1
-#		i -= 1
-#	end
-#	println(i,',',j)
-#	minpath += int(arr[i][j])
-#end 
-
-#println(minpath)
